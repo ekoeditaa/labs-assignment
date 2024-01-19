@@ -1,0 +1,27 @@
+[
+  {
+    "name": "CVE-2023-22522 - Remote Code Execution Vulnerability on Atlassian Confluence Data Centers",
+    "affected_technologies": [
+      {
+        "name": "Confluence Data Center",
+        "version": "8.6.0"
+      },
+      {
+        "name": "Confluence Data Center",
+        "version": "8.6.1"
+      }
+    ],
+    "hunts": [
+      {
+        "id": "1",
+        "name": "Hunt 1",
+        "tenant_ids": ["1", "2"]
+      },
+      {
+        "id": "2",
+        "name": "Hunt 2",
+        "tenant_ids": ["1", "3"]
+      }
+    ]
+  }
+]
