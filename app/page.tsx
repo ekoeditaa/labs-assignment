@@ -2,7 +2,7 @@ import { TenantSchema, VulnerabilitySchema } from "@/types/schema";
 import fs from "fs";
 import path from "path";
 import { z } from "zod";
-import HuntAssetsPage from "./HuntAssets";
+import HuntPage from "../components/Hunt";
 
 // Simulate a database reads for the data
 async function getTenants() {
@@ -24,8 +24,8 @@ async function getVulnerabilities() {
 }
 
 export default async function IndexPage() {
-  const tenants = await getTenants();
   const vulnerabilities = await getVulnerabilities();
+  const tenants = await getTenants();
 
-  return <HuntAssetsPage tenants={tenants} vulnerabilities={vulnerabilities} />;
+  return <HuntPage tenants={tenants} vulnerabilities={vulnerabilities} />;
 }
