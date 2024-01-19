@@ -55,12 +55,17 @@ export default function AssetDisplay({ asset }: { asset: Asset }) {
         {asset.technologies.map((tech, index) => (
           <div
             key={index}
-            className="mb-1 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+            className={`mb-1 p-2 flex items-start rounded-sm last:mb-0 last:pb-0 ${
+              techWithAffectedProperties[index].isAffected
+                ? "bg-yellow-200"
+                : ""
+            }`}
           >
-            <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+            <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500 mr-2" />
             <div className="space-y-1">
-              <p className="text-sm font-medium leading-none">{tech.name}</p>
-              <p className="text-sm text-muted-foreground">{tech.version}</p>
+              <p className="text-sm font-medium leading-none">
+                {tech.name} {tech.version}
+              </p>
             </div>
           </div>
         ))}
