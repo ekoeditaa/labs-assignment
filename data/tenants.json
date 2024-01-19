@@ -16,8 +16,8 @@
             "version": "2.4.41"
           },
           {
-            "name": "PHP",
-            "version": "7.4.25"
+            "name": "Confluence Data Center",
+            "version": "8.6.0"
           },
           {
             "name": "MySQL",
@@ -32,6 +32,28 @@
         "subdomain": "asset-b.tenant-a.com",
         "ip": "10.0.0.2",
         "port": 443,
+        "technologies": [
+          {
+            "name": "Nginx",
+            "version": "1.21.6"
+          },
+          {
+            "name": "Node.js",
+            "version": "16.14.2"
+          },
+          {
+            "name": "MongoDB",
+            "version": "4.4.22"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "name": "Asset C",
+        "version": "9.0.1",
+        "subdomain": "asset-c.tenant-a.com",
+        "ip": "10.0.0.4",
+        "port": 88,
         "technologies": [
           {
             "name": "Nginx",
@@ -66,8 +88,8 @@
             "version": "8.2p1"
           },
           {
-            "name": "Linux",
-            "version": "5.15.0-46-generic"
+            "name": "Confluence Data Center",
+            "version": "8.6.0"
           },
           {
             "name": "Docker",
@@ -120,8 +142,38 @@
             "version": "5.10.102-generic"
           },
           {
-            "name": "Dovecot",
-            "version": "2.3.17"
+            "name": "Confluence Data Center",
+            "version": "8.6.0"
+          },
+          {
+            "name": "Docker",
+            "version": "20.10.17"
+          },
+          {
+            "name": "MongoDB",
+            "version": "20.1.11"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "name": "Asset F",
+        "version": "2.0.0",
+        "subdomain": "asset-f.tenant-c.com",
+        "ip": "10.0.0.6",
+        "port": 5500,
+        "technologies": [
+          {
+            "name": "Postfix",
+            "version": "3.6.14"
+          },
+          {
+            "name": "Linux",
+            "version": "5.10.102-generic"
+          },
+          {
+            "name": "Confluence Data Center",
+            "version": "8.6.0"
           }
         ]
       }

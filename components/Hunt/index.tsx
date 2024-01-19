@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import AssetDisplay from "../Asset";
 import { VulnerabilityContext } from "@/contexts";
+import { Tenant, Vulnerability } from "@/types/schema";
 
 const HuntPage = ({
   vulnerabilities,
@@ -75,8 +76,8 @@ const HuntPage = ({
         <VulnerabilityContext.Provider value={selectedVulnerability}>
           {selectedTenant && selectedVulnerability && (
             <div>
-              <h3>Selected Tenant: {selectedTenant.name}</h3>
-              <h3>Selected Vulnerability: {selectedVulnerability.name}</h3>
+              {/* <h3>Selected Tenant: {selectedTenant.name}</h3>
+              <h3>Selected Vulnerability: {selectedVulnerability.name}</h3> */}
               {/* Render the data based on the selected tenant and vulnerability */}
               <div className="flex gap-4 p-4">
                 {selectedTenant.assets.map((asset) => (

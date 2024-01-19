@@ -1,4 +1,4 @@
-import { Asset } from "@/types/schema";
+import { Asset, Technology } from "@/types/schema";
 import {
   Card,
   CardContent,
@@ -7,16 +7,47 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useContext } from "react";
+import { VulnerabilityContext } from "@/contexts";
+import { Button } from "../ui/button";
+
+type TechnologyWithAffectedProperties = Technology & {
+  isAffected: boolean;
+};
 
 export default function AssetDisplay({ asset }: { asset: Asset }) {
+  const selectedVulnerability = useContext(VulnerabilityContext);
+  const affectedTechnologies = selectedVulnerability!.affected_technologies;
+
+  const techWithAffectedProperties: TechnologyWithAffectedProperties[] =
+    asset.technologies.map((technology) => {
+      return {
+        ...technology,
+        isAffected: affectedTechnologies.some(
+          (tech) =>
+            tech.name === technology.name && tech.version === technology.version
+        ),
+      };
+    });
+
+  const isAssetAffected = techWithAffectedProperties.some(
+    (tech) => tech.isAffected
+  );
+
+  const bgColor = isAssetAffected ? "bg-red-100" : "";
+
   return (
-    <Card className="w-80">
+    <Card className={`w-80 ${bgColor}`}>
       <CardHeader>
         <CardTitle>{asset.name}</CardTitle>
         <CardDescription>
           Subdomain: {asset.subdomain}
           <br />
           IP: {asset.ip}
+          <br />
+          Port: {asset.port}
+          <br />
+          Version: {asset.version}
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -35,7 +66,7 @@ export default function AssetDisplay({ asset }: { asset: Asset }) {
         ))}
       </CardContent>
       <CardFooter>
-        <p>Card Footer</p>
+        {isAssetAffected && <Button>Add Asset to Hunt</Button>}
       </CardFooter>
     </Card>
   );
