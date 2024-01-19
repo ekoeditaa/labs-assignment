@@ -1,0 +1,132 @@
+{
+  "tenants": [
+    {
+      "id": "1",
+      "name": "Tenant A",
+      "assets": [
+        {
+          "id": "1",
+          "name": "Asset A",
+          "version": "8.6.1",
+          "subdomain": "asset-a.tenant-a.com",
+          "ip": "10.0.0.1",
+          "port": 80,
+          "technologies": [
+            {
+              "name": "Apache HTTP Server",
+              "version": "2.4.41"
+            },
+            {
+              "name": "PHP",
+              "version": "7.4.25"
+            },
+            {
+              "name": "MySQL",
+              "version": "8.0.28"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Asset B",
+          "version": "9.0.1",
+          "subdomain": "asset-b.tenant-a.com",
+          "ip": "10.0.0.2",
+          "port": 443,
+          "technologies": [
+            {
+              "name": "Nginx",
+              "version": "1.21.6"
+            },
+            {
+              "name": "Node.js",
+              "version": "16.14.2"
+            },
+            {
+              "name": "MongoDB",
+              "version": "4.4.22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Tenant B",
+      "assets": [
+        {
+          "id": "3",
+          "name": "Asset C",
+          "version": "10.0.0",
+          "subdomain": "asset-c.tenant-b.com",
+          "ip": "10.0.0.3",
+          "port": 22,
+          "technologies": [
+            {
+              "name": "OpenSSH",
+              "version": "8.2p1"
+            },
+            {
+              "name": "Linux",
+              "version": "5.15.0-46-generic"
+            },
+            {
+              "name": "Docker",
+              "version": "20.10.17"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "name": "Asset D",
+          "version": "8.6.0",
+          "subdomain": "asset-d.tenant-b.com",
+          "ip": "10.0.0.4",
+          "port": 8080,
+          "technologies": [
+            {
+              "name": "Apache Tomcat",
+              "version": "9.0.60"
+            },
+            {
+              "name": "Java",
+              "version": "11.0.15"
+            },
+            {
+              "name": "Oracle Database",
+              "version": "19c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Tenant C",
+      "assets": [
+        {
+          "id": "5",
+          "name": "Asset E",
+          "version": "9.0.0",
+          "subdomain": "asset-e.tenant-c.com",
+          "ip": "10.0.0.5",
+          "port": 25,
+          "technologies": [
+            {
+              "name": "Postfix",
+              "version": "3.6.14"
+            },
+            {
+              "name": "Linux",
+              "version": "5.10.102-generic"
+            },
+            {
+              "name": "Dovecot",
+              "version": "2.3.17"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
